@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+<div class="flex min-h-full  items-center justify-center sm:px-6 lg:px-8" style=" padding-top:60px; padding-botton:50px;" > 
+  <div class="w-full max-w-md space-y-8">
+    <div>
+       <a href="/">
+      <img class="mx-auto h-12 w-auto" src="/static/logo.png/" alt="Your Company">
+       </a>
+      <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Inicie sesión en su cuenta</h2>
+      <p class="mt-2 text-center text-sm text-gray-600">
+          O si no tienes una,  
+        <a href="{{ signup_url }}" class="font-medium text-indigo-600 hover:text-indigo-500">registrate aquí</a>
+      </p>
+      
+      <br>
+
+    </div>
+    <form class="login" method="POST" action="{% url 'account_login' %}">
+    {% csrf_token %}
+      <div class="-space-y-px rounded-md shadow-sm">
+        
+        <div>
+          <label for="your_name" class="sr-only">User name</label>
+          <input name="login" id="{{ form.login.auto_id }}" type="text" required class= "form-control relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="User name">
+        </div>
+      
+
+        <div>
+          <label for="password" class="sr-only">Password</label>
+          <input name="password" id="{{ form.password.auto_id }}" type="password" autocomplete="current-password" required class=" form-control relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Password">
+        </div>
+      </div>
+    
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+
+          <br>
+    
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+          <label for="remember-me" class="ml-2 block text-sm text-gray-900">Remember me</label>
+        </div>
+
+        <div class="text-sm">
+          <a href="{% url 'account_reset_password' %}" class="font-medium text-indigo-600 hover:text-indigo-500">¿Olvidaste tu contraseña?</a>
+        </div>
+      </div>
+
+<br>
+
+      <div>
+        <button type="submit" class="primaryAction flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+          {% trans "Inicie sesión" %} &raquo;
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
+&raquo;

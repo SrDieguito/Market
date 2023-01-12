@@ -1,0 +1,24 @@
+{% load static %}
+
+<footer class="bg-gray-300 p-4 text-neutral-content text-center">
+  <div class="flex justify-start float-left">
+    <img class="h-12 w-auto" src="{% static 'logo.png' %}" alt="">
+  </div>
+  <div class="items-center grid-flow-col">
+     <p>©Copyright 2023 Market - todos los derechos reservados</p>
+  </div> 
+
+    <div class="flex space-x-10 flex justify-end">
+  
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAdBJREFUSEvllu0xREEQRc9GgAgQASJABMiACMgAESACMkAEiAARkAEioI6aVmNq3tt5u6qW0n92683HnXvndveMmFGMZoTLrweeB1Ya1XkEXsfN7WMs2CGwDSyN26gYfwaugOOuQ3QBbwDnGeAb8NAIvgrMpbkeYKe2tgYs0/sEeg0cAG4wJAQ/BdbT2rWSeQ3YBfuAoMo8NAQ1VOg2gZ8lAl971YBltwgsT8hUtQxZqt5N2sf9OoGd+ALozDh5ydjvW9m4zFTHX8dyYL+9pw0WcrlLxprKE94B/i/jKDm9Jr9jujiXOiQ3FTeT9J9rhwAHqA7XB96f4QE1oE4W2Hl5xD1PBBwSCmpOlwXCK9IbgpfemAo42NYYBbvIhnLOVMBWIQ31Ta5CUlPvspKGfxN4ZlKHuTSV5qmZ6ykVjB81l9cZrAXN08m73U2gP55O4aO+AtLleKvX2AISJdPJ1tpamMcyzCvURU9dbyqZAk3TJMqDRgm28Eiqs0k4EIXA3LWJTxOD2qInU2pbowv3JmyPJ6mOV8ts39PHexPc0MlDnj4hq6C6PhpKr9Qx6GJdrJHiDdUqu4BelV2r+uJsfVfr5NaXZpM6rcCtTJvn/T/gDzkzlR+R3OxFAAAAAElFTkSuQmCC"/>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAiZJREFUSEvllt01BUEQhOtGgAgQASJABkSACBABIkAEiIAMEAEiQASIgPPt2d7T2+Zndz3cB/1yz92dmerqrqnemeYUsznhagrwlqQFSett0s+SPiU9jiExFHhF0omkHUmLGQDA7yRdSiKZYtSAATmXtF87KLy/lnTcViK5tQRMKa9cSUdi603Sbo59DhjQ+0JZhyZB+bdT4ClgyguoieddarLfHIj20q5ba3/ZuxHLngKmP3sOhIwfJCEw3pEY4uFAguckCTu0wHP+P7kzbqJOIjCHvAZmqw5kIOlm2XdYDOtO7RH4QtJh2GCMx4BGxuztsY7AlGnZIdBfK+MYYGuHP4tWLNkhHjiV5UHb1zGgtpZ+cx19dNXzwFghavbR68tIdFh/hD3ca9yt59VHrUv5tTVnq+USBXYm6XQI8BRhWTKpG5IETpX6Lz1moNyGknTn+VKmMsQ4YD0lohFxRqeZ2EMkz6z1MYV1StFf3vtLBsIdtnuIIJizJFYKlIwBNQIKUTQQX26kb8PdqkDpSaC5Ei7wAOY2OslF0TLZRLZ8bRD0l2S8EaS8O3VnfQIky3XtIjcWYcZYM3HBCJVi8pGtHZbSB+8Yk1Si16acQcASEEqMOhFYLUgyzmwEBeivb7CSMwEOOxvobKaklDoVkTFMUXfyw69miQDRG+s5gLk93h7pKVrJ3oIasDGDPQnwS69TQUsAYqbb10m2PUOBa/0d/f7/Af8A+YtyH9j17mQAAAAASUVORK5CYII="/>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAc1JREFUSEvFlu0xBUEQRe+LABEgAkSACBABGSgRIAIlAkSACBABGSADIqCO2t2aHT09PfPn9a/3Mbunb3/OQkuyxZK46gHvSVqRtD04/SbpS9JLi4goGMippENJqwUA8AdJ15JwxrUaGMiVpJPai7L/byWdDZEwH/XAqLyXtNEIHY9/SDoqqS+BgT45YY36Qvj3LbgFJryvQaWfQ14BjEbx7SbfUb6Th90Ck5/jgCSK6MLII7+dZ8/f5XWSgwkxamtG66DMMgvMuU1JqP+zHBxVS9HQOqnhyM+gzOqCmeocTK4YDjUjZ2mv4sRB5SHevWYpxmMqOWK5wyiNGBX+nIeaqUTfRqwXPKUofUGpKCxHesGXQyfMissDe1WcO+bl2wRTiTeFOLeAKbqtwnvMUHvF1QL2Cm3qhmg70fj0+GiELDXSNAL5bNl3Ovt7B0hPcbkDhBX4HuinHrA7MmFGplAruLokALMWqcx1R3kLmNXJ8klXZ/Gyx0FGW2luR8EUFN3y7w5Wu/oQdkt5BIxSxrB58Ytc9mijfPPUwI/DepyFN01dDTyepdrpTxQQfgtMWIkQ56aFX6qTKDh9nvzn4bN+c7uyBxxo8/qRpYF/ATESYx8MOAMfAAAAAElFTkSuQmCC"/>
+ 
+    </div>
+
+</div>
+
+</div>
+
+</footer>
+

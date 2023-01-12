@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+
+
+<p>{% blocktrans %}{% endblocktrans %}</p>
+
+
+
+<div class="flex min-h-full  items-center justify-center sm:px-6 lg:px-8" style=" padding-top:60px; padding-botton:50px;" > 
+  <div class="w-full max-w-md space-y-8">
+    <div>
+      <a href="/">
+      <img class="mx-auto h-12 w-auto" src="/static/logo.png/" alt="Your Company">
+      </a>
+      <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Registrate !Es gratis¡ </h2>
+      <p class="mt-2 text-center text-sm text-gray-600">
+          O si ya tienes una cuenta,  
+        <a href="{{ login_url }}" class="font-medium text-indigo-600 hover:text-indigo-500">Inicia sesion aquí</a>
+      </p>
+      
+      <br>
+
+    </div>
+    <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+    {% csrf_token %}
+      <div class="-space-y-px rounded-md shadow-sm">
+        
+        <div class="space-y-4">
+          <div>
+            <label for="id_username" class="sr-only" >Username:</label>
+            <input name="username" minlength="1" maxlength="150" autocomplete="username" type="text" required id="id_username" class= "form-control relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Nombre de Usuario">
+          </div>
+
+          <div>
+            <label for="id_email" class="sr-only" >Email</label>
+            <input name="email" autocomplete="email" id="id_email" type="email" required class= "form-control relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Correo electronico">
+          </div>
+        
+          <div>
+            <label for="id_password1" class="sr-only">Password:</label>
+            <input name="password1" autocomplete="new-password" id="id_password1" type="password" required="" class= "form-control relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Contraseña">
+          </div>
+
+          <div>
+            <label for="id_password2" class="sr-only">Password (again):</label>
+            <input name="password2" id="id_password2" type="password" autocomplete="new-password" required="" class=" form-control relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Repita la contraseña">
+          </div>
+        </div>
+        
+        </div>
+    
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+
+          <br>
+
+      <div>
+        <button type="submit" class="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+          {% trans "Register" %} &raquo;
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+
